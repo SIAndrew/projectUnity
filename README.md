@@ -1,3 +1,2 @@
 # projectUnity
-l;kpowejgpowejgg
-лалвл
+Проект на юнити: Игра - шутер от первого лица

@@ -18,8 +18,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
 
-
-        
+        rb.freezeRotation = true;
     }
 
 

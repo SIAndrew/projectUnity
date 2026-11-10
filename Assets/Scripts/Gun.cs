@@ -35,20 +35,21 @@ public class Gun : MonoBehaviour
         if (isReloading) return;
         if (Time.time < nextTimeToFire) return;
 
-        if (currentAmmo <= 0)
-        {
-            StartCoroutine(Reload()); 
-            return;
-        }
-
         nextTimeToFire = Time.time + fireRate;
-        currentAmmo--;
 
         Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         Instantiate(weaponFlash, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
         StopCoroutine(nameof(Recoil));
         StartCoroutine(nameof(Recoil));
+
+        currentAmmo--;
+
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
     }
 
     IEnumerator Reload()
